@@ -1,0 +1,47 @@
+# --- Build output ---
+target/
+dist/
+dist-ssr/
+build/
+coverage/
+*.tsbuildinfo
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+
+# --- Dependencies ---
+node_modules/
+
+# --- IDE / editor ---
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/
+.sonarlint/
+.settings/
+.classpath
+.project
+
+# --- OS metadata ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Logs ---
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# --- Local environment / secrets ---
+.env
+.env.*
+!.env.example
+*.local
+
+# --- Local database files ---
+data/
+*.mv.db
+*.trace.db

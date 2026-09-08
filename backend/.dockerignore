@@ -1,0 +1,25 @@
+# Build output — the image builds from source, never from a local target/
+target/
+
+# IDE / editor metadata
+.idea
+.vscode
+*.iml
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# VCS
+.git
+.gitignore
+.gitattributes
+
+# Docs
+HELP.md
+README.md
+
+# Local database files
+data/
+*.mv.db
+*.trace.db

@@ -1,0 +1,37 @@
+name: task-application
+
+services:
+  backend:
+    # Built from source in this repository.
+    build:
+      context: ./backend
+    image: task-application-backend:local
+    ports:
+      - "${BACKEND_HOST_PORT:-8080}:8080"
+    environment:
+      # H2 stored on a named volume so tasks survive a restart. Remove this
+      # block and the two `volumes` keys below for a throwaway in-memory database.
+      SPRING_DATASOURCE_URL: jdbc:h2:file:/data/tasks
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: ""
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    volumes:
+      - task-data:/data
+    restart: unless-stopped
+
+  ui:
+    # Pre-built image pulled from GitHub Container Registry — no Node required.
+    # Override with FRONTEND_IMAGE in a .env file to pin a different tag.
+    image: ${FRONTEND_IMAGE:-ghcr.io/aymalshams1/task-app-frontend:latest}
+    ports:
+      - "${UI_HOST_PORT:-3000}:3000"
+    environment:
+      BACKEND_HOST: backend
+      BACKEND_PORT: 8080
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  task-data:
