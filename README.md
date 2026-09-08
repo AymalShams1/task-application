@@ -1,13 +1,12 @@
 # Task Application
 
-A full-stack task management application built with **Spring Boot, Java, and React**.
+A Task Management application built with **Spring Boot, Java, and React**.
 
 The application provides a REST API for managing tasks, a React frontend, persistent storage, and a Docker-based setup for running the complete stack.
 
 ## Tech Stack
 
-**Backend:** Java 21, Spring Boot 4, Spring Data JPA, H2, Maven  
-**Frontend:** React, TypeScript, Vite, Tailwind CSS, nginx  
+**Backend:** Java 21, Spring Boot 4, Spring Data JPA, H2, Maven   
 **DevOps:** Docker, Docker Compose, GitHub Actions
 
 ## Getting Started
