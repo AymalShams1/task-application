@@ -21,8 +21,6 @@ cd task-application
 docker compose up -d
 ```
 
-Open `http://localhost:3000`.
-
 The initial build may take a few minutes. Subsequent starts are much faster.
 
 ```bash
