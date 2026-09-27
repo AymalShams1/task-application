@@ -37,11 +37,11 @@ docker compose down -v     # Stop and remove saved task data
 Browser
    │
    ▼
-React + nginx :3000
+React + nginx 
    │
    │ /api/*
    ▼
-Spring Boot :8080
+Spring Boot 
    │
    ▼
 H2 Database
